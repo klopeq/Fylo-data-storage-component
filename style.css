@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    height: 115vh;
+    width: 100%;
+    background-image: url(images/bg-desktop.png);
+    background-position-y: bottom;
+    background-repeat: no-repeat; 
+    background-color: var(--very-dark-blue);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    height: 90%;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .boxes {
+    display: flex;
+    margin: 20px;
+}
+
+.container .boxes .left-box {
+    background-color: var(--dark-blue);
+    width: 300px;
+    height: 160px;
+    border-radius: 12px 80px 12px 12px;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.container .boxes .left-box .logo  {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.container .boxes .left-box .icons {
+    display: flex;
+    gap: 20px;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+.container .boxes .left-box .file, 
+.container .boxes .left-box .folder,
+.container .boxes .left-box .upload {
+    background-color: var(--very-dark-blue);
+    border-radius: 10px;
+    padding: 10px;
+    padding-bottom: 5px;
+}
+
+.container .right-box {
+    background-color: var(--dark-blue);
+    width: 500px;
+    border-radius: 12px;
+    padding:30px 20px 20px;
+    position: relative;
+    height: 140px;
+    transform: translateY(20px);
+}
+
+.container .right-box p {
+    color: var(--grayish-blue);
+}
+
+.container .right-box p span {
+    color: var(--pale-blue);
+}
+
+.container .right-box .msg {
+    position: absolute;
+    top: -40px;
+    right: 15px;
+    color: var(--very-dark-blue);
+    background-color: var(--pale-blue);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.container .right-box .msg h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.container .right-box .msg h1 span {
+    color: var(--grayish-blue);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.container .right-box .msg::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 50px;
+    background-color: var(--pale-blue);
+    bottom: 0;
+    right: 0;
+    transform: skew(180deg,34deg);
+}
+
+.container .right-box .main-line {
+    width: 400px;
+    height: 20px;
+    background-color: var(--very-dark-blue);
+    margin: 20px 0 10px;
+    border-radius: 20px;
+}
+
+.container .right-box .main-line .second-line {
+    background: linear-gradient(hsl(6, 100%, 80%) , hsl(335, 100%, 65%));
+    height: 20px;
+    width: 70%;
+    border-radius: 20px;
+    border: solid 2px var(--very-dark-blue);
+    position: relative;
+}
+
+.container .right-box .main-line .second-line .point {
+    background-color: var(--pale-blue);
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    position: absolute;
+    right: 0%;
+    top: 10%;
+}
+
+.container .right-box .storage {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .right-box .storage p {
+    color: var(--pale-blue);
+}
+
+@media (max-width:500px) {
+    body {
+        background-image: url(images/bg-mobile.png);
+        background-color: none;
+        background-position-y: none;
+        overflow-x: hidden;
+        
+    }
+
+    .container .boxes {
+        display: block;
+        align-items: center;
+        justify-content: center;;
+    }
+
+    .container .boxes .left-box {
+        width: 350px;
+    }
+
+    .container .boxes .right-box  {
+        transform: translateY(0px);
+        margin-top: 20px;
+        width: 350px;
+        
+    }
+
+    .container .right-box .msg {
+        top: auto;
+        bottom: -40px;
+        right: auto;
+        left: 25%;
+    }
+
+    .container .right-box .msg::before {
+        display: none;
+    }
+
+    .container .right-box .main-line,
+    .container .right-box .main-line .second-line {
+        height: 15px;
+        width: 300px;
+    }
+
+    .container .right-box .main-line .second-line {
+        width: 70%;
+    }
+
+    .container .right-box .main-line .second-line .point {
+        height: 10px;
+        width: 10px;
+        bottom: 50%;
+    }
+
+    
+
+    
+}
